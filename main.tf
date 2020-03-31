@@ -71,7 +71,7 @@ job "web_app" {
       config {
         image = "redis:4-alpine" # Docker image to download (uses public hub by default)
         args = [
-          "redis-server", "--requirepass", "${dbpass}"
+          "redis-server", "--requirepass", "${var.dbpass}"
          
         ]  
       }
