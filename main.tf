@@ -11,7 +11,7 @@ data "terraform_remote_state" "nomad" {
 }
 
 provider "nomad" {
-  address = "${data.terraform_remote_state.nomad.outputs.UI}:4646"
+  address = "${data.terraform_remote_state.nomad.outputs.UI}"
   region  = "us-east-1"
 }
 
