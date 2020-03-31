@@ -11,7 +11,7 @@ data "terraform_remote_state" "nomad" {
 }
 
 provider "nomad" {
-  address = "http:// + data.terraform_remote_state.nomad.outputs.UI"
+  address = "http://" + data.terraform_remote_state.nomad.outputs.UI
 }
 
 resource "nomad_job" "fabio" {
