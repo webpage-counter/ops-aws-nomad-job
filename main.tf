@@ -79,6 +79,11 @@ job "web_app" {
 
   group "counter" {
     count = 3
+    update {
+      max_parallel     = 1
+      min_healthy_time = "30s"
+      healthy_deadline = "10m"
+    }
     network {
       mode = "bridge"
 
