@@ -79,9 +79,9 @@ EOT
 }
 
 
-resource "nomad_job" "app1" {
+resource "nomad_job" "app" {
   jobspec = <<EOT
-job "app" {
+job "app1" {
   datacenters = ["dc1"]
 
   group "counter" {
