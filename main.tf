@@ -82,7 +82,7 @@ job "web_app" {
     update {
       max_parallel     = 1
       min_healthy_time = "30s"
-      healthy_deadline = "10m"
+      healthy_deadline = "5m"
     }
     network {
       mode = "bridge"
