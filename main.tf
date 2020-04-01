@@ -83,6 +83,7 @@ job "web_app" {
       max_parallel     = 1
       min_healthy_time = "30s"
       healthy_deadline = "5m"
+      auto_revert = true
     }
     network {
       mode = "bridge"
@@ -125,7 +126,7 @@ job "web_app" {
     task "app" {
       driver = "docker"      
       config {
-        image = "denov/webpage-counter:0.1.3" 
+        image = "denov/webpage-counter:0.1.2" 
       }
     }
   }
