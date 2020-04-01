@@ -79,7 +79,7 @@ EOT
 }
 
 
-resource "nomad_job" "app" {
+resource "nomad_job" "app1" {
   jobspec = <<EOT
 job "app" {
   datacenters = ["dc1"]
