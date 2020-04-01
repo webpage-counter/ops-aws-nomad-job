@@ -46,11 +46,9 @@ job "fabio" {
 }
 EOT
 }
-
-
-resource "nomad_job" "app" {
+resource "nomad_job" "db" {
   jobspec = <<EOT
-job "web_app" {
+job "db" {
   datacenters = ["dc1"]
 
   group "db" {
@@ -75,15 +73,25 @@ job "web_app" {
         ]  
       }
     } 
-  }  
+  }
+}
+EOT
+}
+
+
+resource "nomad_job" "app" {
+  jobspec = <<EOT
+  
 
   group "counter" {
     count = 3
     update {
       max_parallel     = 1
+      canary           = 3
       min_healthy_time = "30s"
       healthy_deadline = "5m"
-      auto_revert = true
+      auto_revert      = true
+      auto_promote     = true
     }
     network {
       mode = "bridge"
