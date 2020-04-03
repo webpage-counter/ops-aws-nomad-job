@@ -88,12 +88,12 @@ job "app" {
     count = 3
     update {
       max_parallel     = 1
-      canary           = 3
+      //canary           = 3
       min_healthy_time = "10s"
       healthy_deadline = "5m"
       progress_deadline = "10m"
       auto_revert      = true
-      auto_promote     = false
+      //auto_promote     = false
     }
     network {
       mode = "bridge"
@@ -136,7 +136,7 @@ job "app" {
     task "app" {
       driver = "docker"      
       config {
-        image = "denov/webpage-counter:0.1.2" 
+        image = "denov/webpage-counter:0.1.3" 
       }
     }
   }
