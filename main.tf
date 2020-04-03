@@ -81,7 +81,7 @@ EOT
 
 resource "nomad_job" "app" {
   jobspec = <<EOT
-job "app1" {
+job "app" {
   datacenters = ["dc1"]
 
   group "counter" {
