@@ -93,7 +93,7 @@ job "app1" {
       healthy_deadline = "5m"
       progress_deadline = "10m"
       auto_revert      = true
-      auto_promote     = false
+      auto_promote     = true
     }
     network {
       mode = "bridge"
@@ -136,7 +136,7 @@ job "app1" {
     task "app" {
       driver = "docker"      
       config {
-        image = "denov/webpage-counter:0.1.4" 
+        image = "denov/webpage-counter:0.1.3" 
       }
     }
   }
